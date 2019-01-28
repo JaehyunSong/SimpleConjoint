@@ -29,7 +29,7 @@ GenerateURL <- function(file, Task = 3, Profile = 2,
                    paste(c(nTas, nPro, Rand, nA.R, nL.R, A.R, L.R),
                          collapse = "&"))
 
-  result <- gsub("&", "%26", result, fixed = TRUE)
+  result <- gsub("&", "%26", result)
   result <- gsub("?", "%3F", result, fixed = TRUE)
 
   return(result)
