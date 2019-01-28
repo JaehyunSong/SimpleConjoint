@@ -1,5 +1,6 @@
 GenerateURL <- function(file, Task = 3, Profile = 2,
-                        Randomized = TRUE){
+                        Randomized = TRUE,
+                        DefaultURL = "http://www.jaysong.net/Qualtrics/SimpleConjoint/SimpleConjoint.php"){
 
   df <- read.csv(file, header = FALSE, stringsAsFactors = FALSE)
   nA <- ncol(df)
@@ -27,7 +28,7 @@ GenerateURL <- function(file, Task = 3, Profile = 2,
   nTas <- paste0("nTask=", Task)
   Rand <- paste0("AttrRand=", as.numeric(Randomized))
 
-  result <- paste0("http://www.jaysong.net/Qualtrics/SimpleConjoint/SimpleConjoint.php?",
+  result <- paste0(DefaultURL, "?",
                    paste(c(nTas, nPro, Rand, nA.R, nL.R, A.R, L.R),
                          collapse = "&"))
 
