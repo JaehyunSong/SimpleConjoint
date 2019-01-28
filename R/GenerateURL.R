@@ -11,14 +11,13 @@ GenerateURL <- function(file, Task = 3, Profile = 2,
 
   for (i in 1:nA) {
     Temp.vec <- df[, i]
-    A[i]  <- Temp.vec[1]
+    A[i]  <- gsub("&", "%26", Temp.vec[1], fixed = TRUE)
+    A[i]  <- gsub("?", "%3F", Temp.vec[1], fixed = TRUE)
     nL[i] <- sum(Temp.vec != "") - 1
-    L[j:(j + nL[i] - 1)] <- Temp.vec[2:(nL[i] + 1)]
+    L[j:(j + nL[i] - 1)] <- gsub("&", "%26", Temp.vec[2:(nL[i] + 1)], fixed = TRUE)
+    L[j:(j + nL[i] - 1)] <- gsub("?", "%3F", Temp.vec[2:(nL[i] + 1)], fixed = TRUE)
     j <- j + nL[i]
   }
-
-  A.R <- gsub("&", "%26", A.R, fixed = TRUE)
-  L.R <- gsub("?", "%3F", L.R, fixed = TRUE)
 
   nA.R <- paste0("nA=", nA)
   nL.R <- paste0("nL[]=", paste(nL, collapse = "&nL[]="))
