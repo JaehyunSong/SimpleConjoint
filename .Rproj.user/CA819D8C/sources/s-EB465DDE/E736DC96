@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1548674716265.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "E736DC96",
+    "lastKnownWriteTime" : 1548674720,
+    "last_content_update" : 1548674720520,
+    "path" : "~/Dropbox/Software/SimpleConjoint/R/GenerateURL.R",
+    "project_path" : "R/GenerateURL.R",
+    "properties" : {
+        "cursorPosition" : "36,0",
+        "scrollLine" : "18"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
