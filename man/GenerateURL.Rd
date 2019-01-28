@@ -8,7 +8,8 @@
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-GenerateURL(file, Taks = 3, Profile = 2, Randomized = TRUE)
+GenerateURL(file, Taks = 3, Profile = 2, Randomized = TRUE,
+            DefaultURL = "http://www.jaysong.net/Qualtrics/SimpleConjoint/SimpleConjoint.php")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -16,6 +17,7 @@ GenerateURL(file, Taks = 3, Profile = 2, Randomized = TRUE)
   \item{Task}{試行回数}
   \item{Profile}{プロフィールの数}
   \item{Randomized}{TRUEの場合、属性の順番はランダム化され、FALSEの場合、csvに記入された順番で表示されます。}
+  \item{DefaultURL}{SimpleConjoint.phpのURLを指定します。指定がない場合、宋のサーバーのURLとなります。自分のサーバーを用いる場合は指定して下さい。宋のサーバーが可愛そうです。}
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
