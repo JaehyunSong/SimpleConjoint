@@ -17,6 +17,9 @@ GenerateURL <- function(file, Task = 3, Profile = 2,
     j <- j + nL[i]
   }
 
+  A.R <- gsub("&", "%26", A.R, fixed = TRUE)
+  L.R <- gsub("?", "%3F", L.R, fixed = TRUE)
+
   nA.R <- paste0("nA=", nA)
   nL.R <- paste0("nL[]=", paste(nL, collapse = "&nL[]="))
   A.R  <- paste0("A[]=", paste(A, collapse = "&A[]="))
@@ -28,9 +31,6 @@ GenerateURL <- function(file, Task = 3, Profile = 2,
   result <- paste0("http://www.jaysong.net/Qualtrics/SimpleConjoint/SimpleConjoint.php?",
                    paste(c(nTas, nPro, Rand, nA.R, nL.R, A.R, L.R),
                          collapse = "&"))
-
-  result <- gsub("&", "%26", result)
-  result <- gsub("?", "%3F", result, fixed = TRUE)
 
   return(result)
 }
