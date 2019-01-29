@@ -9,7 +9,8 @@
 }
 \usage{
 GenerateURL(file, Taks = 3, Profile = 2, Randomized = TRUE,
-            DefaultURL = "http://www.jaysong.net/Qualtrics/SimpleConjoint/SimpleConjoint.php")
+            DefaultURL = "http://www.jaysong.net/Qualtrics/SimpleConjoint/SimpleConjoint.php",
+            Design = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -18,18 +19,21 @@ GenerateURL(file, Taks = 3, Profile = 2, Randomized = TRUE,
   \item{Profile}{プロフィールの数}
   \item{Randomized}{TRUEの場合、属性の順番はランダム化され、FALSEの場合、csvに記入された順番で表示されます。}
   \item{DefaultURL}{SimpleConjoint.phpのURLを指定します。指定がない場合、宋のサーバーのURLとなります。自分のサーバーを用いる場合は指定して下さい。宋のサーバーが可愛そうです。}
+  \item{Design}{cjointパッケージで分析を行う際に必要なデザインリストを返します。このオプションがTRUEの場合、URLは返還されません。}
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-URLが返還されます。URLをコピーし、QualtricsのWeb Serviceに貼り付けます。
+* DesignパラメーターがFALSEの場合、URLが返還されます。URLをコピーし、QualtricsのWeb Serviceに貼り付けます。
+
+* DesignパラメーターがTRUEの場合、リストが返還されます。cjointパッケージでそのまま利用できます。
 }
 \references{
 %% ~put references to the literature/web site here ~
 }
 \author{
-Jaehyun Song (Waseda University)
+Jaehyun Song (Waseda University) <tintstyle@gmail.com / http://www.jaysong.net>
 }
 \note{
 %%  ~~further notes~~
@@ -46,6 +50,10 @@ Jaehyun Song (Waseda University)
 
 # 上記の属性と水準で試行回数5回、プロフィール数2つ、属性のランダム化
 GenerateURL("http://www.jaysong.net/Qualtrics/SimpleConjoint/ExampleDesign2.csv", Task = 5, Profile = 2, Randomized = TRUE)
+
+# デザインリストを取得する場合
+DesignList <- GenerateURL("http://www.jaysong.net/Qualtrics/SimpleConjoint/ExampleDesign2.csv", Design = TRUE)
+print(DesignList)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
