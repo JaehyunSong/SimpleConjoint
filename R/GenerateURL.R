@@ -32,11 +32,12 @@ GenerateURL <- function(file, Task = 3, Profile = 2,
     nTas <- paste0("nTask=", Task)
     Rand <- paste0("AttrRand=", as.numeric(Randomized))
 
-    result <- paste0(DefaultURL, "?",
-                     paste(c(nTas, nPro, Rand, nA.R, nL.R, A.R, L.R),
-                           collapse = "&"))
+    longURL <- paste0(DefaultURL, "?",
+                      paste(c(nTas, nPro, Rand, nA.R, nL.R, A.R, L.R),
+                            collapse = "&"))
 
-    cat(result)
+    cat(paste(longURL, "\n\n"))
+    cat(paste("Before the url above embed into Qualtrics, please shorten the url via url shortner.\nBitly: https://www.bitly.com"))
   }
 
   if (Design == TRUE) {
