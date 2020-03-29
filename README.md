@@ -52,7 +52,7 @@ GenerateURL(“http://www.jaysong.net/Qualtrics/SimpleConjoint/ExampleDesign2.cs
 
 * `DefaultURL`パラメーターは自分のサーバーに`SimpleConjoint.php`を置く際に使って下さい。指定なない場合、宋のサーバーを使います。
 
-* 自分のサーバーに導入する場合、このファイルを使って下さい。
+* 自分のサーバーに導入する場合、[このファイル](https://www.dropbox.com/s/rfxlu8k0ctgjl9p/SimpleConjoint.php?dl=0)を使って下さい。
 
 * 最初のパラメーターは属性と水準が格納されているCSVファイルです。たとえば、以下の形式となります。
 
