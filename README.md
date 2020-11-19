@@ -40,9 +40,9 @@ URL Generator for Conjoint Experiments with Simple Designs
 library(SimpleConjoint)
 
 # 試行回数4回、プロフィール2個、属性のランダム化の場合
-GenerateURL(“http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/ExampleDesign2.csv”, 
+GenerateURL("http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/ExampleDesign2.csv", 
              Task = 4, Profile = 2, Randomized = TRUE, 
-             DefaultURL = “http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.php”)
+             DefaultURL = "http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.php")
 ```
 
 * 実行すると、以下のような結果が返ってきます。
@@ -52,8 +52,7 @@ GenerateURL(“http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/ExampleDesig
 * ここでURLのみコピーし、URLを短縮します。[Bit.ly](https://bitly.com/)などが代表的なサービスです。以降の手順は、この短縮されたURLを使用し、[通常のコンジョイント分析](http://tintstyle.cafe24.com/studynote/methodology/qualtrics_conjoint/)と同じです。QualtricsのUIの方では2バイト文字をGET methodで送ることができますが、実際の場面では出来なようなので、URLを短縮する必要があります ([矢内勇生](https://yukiyanai.github.io)先生の指摘により修正しました。)。
 
 * `DefaultURL`パラメーターは自分のサーバーに`SimpleConjoint.php`を置く際に使って下さい。指定なない場合、宋のサーバーを使います。
-
-* 自分のサーバーに導入する場合、[このファイル](https://www.dropbox.com/s/rfxlu8k0ctgjl9p/SimpleConjoint.php?dl=0)を使って下さい。
+    * 自分のサーバーに導入する場合、[このファイル](https://www.dropbox.com/s/rfxlu8k0ctgjl9p/SimpleConjoint.php?dl=0)を使って下さい。
 
 * 最初のパラメーターは属性と水準が格納されているCSVファイルです。たとえば、以下の形式となります。
 
