@@ -1,6 +1,6 @@
 GenerateURL <- function(file, Task = 3, Profile = 2,
                         Randomized = TRUE,
-                        DefaultURL = "http://www.jaysong.net/Qualtrics/SimpleConjoint/SimpleConjoint.php",
+                        DefaultURL = "http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.php",
                         Design     = FALSE){
 
   df <- read.csv(file, header = FALSE, stringsAsFactors = FALSE)

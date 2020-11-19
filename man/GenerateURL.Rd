@@ -9,7 +9,7 @@
 }
 \usage{
 GenerateURL(file, Taks = 3, Profile = 2, Randomized = TRUE,
-            DefaultURL = "http://www.jaysong.net/Qualtrics/SimpleConjoint/SimpleConjoint.php",
+            DefaultURL = "http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.php",
             Design = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
@@ -33,7 +33,7 @@ GenerateURL(file, Taks = 3, Profile = 2, Randomized = TRUE,
 %% ~put references to the literature/web site here ~
 }
 \author{
-Jaehyun Song (Waseda University) <tintstyle@gmail.com / http://www.jaysong.net>
+Jaehyun Song (Doshisha University) <tintstyle@gmail.com / https://www.jaysong.net>
 }
 \note{
 %%  ~~further notes~~
@@ -49,10 +49,10 @@ Jaehyun Song (Waseda University) <tintstyle@gmail.com / http://www.jaysong.net>
 # read.csv("http://www.jaysong.net/Qualtrics/SimpleConjoint/ExampleDesign2.csv")
 
 # 上記の属性と水準で試行回数5回、プロフィール数2つ、属性のランダム化
-GenerateURL("http://www.jaysong.net/Qualtrics/SimpleConjoint/ExampleDesign2.csv", Task = 5, Profile = 2, Randomized = TRUE)
+GenerateURL("http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/ExampleDesign2.csv", Task = 5, Profile = 2, Randomized = TRUE)
 
 # デザインリストを取得する場合
-DesignList <- GenerateURL("http://www.jaysong.net/Qualtrics/SimpleConjoint/ExampleDesign2.csv", Design = TRUE)
+DesignList <- GenerateURL("http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/ExampleDesign2.csv", Design = TRUE)
 print(DesignList)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
