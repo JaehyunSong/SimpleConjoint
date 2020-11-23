@@ -24,7 +24,7 @@ URL Generator for Conjoint Experiments with Simple Designs
 
 1. {devtools}、または{remotes}パッケージを導入
 
-```
+```r
 install.packages("devtools")
 # または
 install.packages("remotes")
@@ -32,14 +32,14 @@ install.packages("remotes")
 
 2. {SimpleConjoint}のインストール
 
-```
+```r
 devtools::install_github("JaehyunSong/SimpleConjoint")
 # または
 remotes::install_github("JaehyunSong/SimpleConjoint")
 ```
 
 3. パッケージの読み込み
-```
+```r
 library(SimpleConjoint)
 ```
 
@@ -51,7 +51,7 @@ library(SimpleConjoint)
 
 **例**
 
-```
+```r
 library(SimpleConjoint)
 
 # 試行回数4回、プロフィール2個、属性の順番ランダム化の場合
@@ -74,7 +74,7 @@ is.gd: https://is.gd
 
 * `ShortURL = TRUE`を指定する場合、[is.gd](https://is.gd/)経由で短縮URLを返します。短縮URLはQualtricsのWeb Serviceに埋め込むことができます。インターネットが使える環境で使用してください。URL短縮には{urlshorteneR}パッケージを使用しています。
 
-```
+```r
 # デザインdata.framenの読み込み
 DesignData <- read.csv("http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/ExampleDesign2.csv")
 
