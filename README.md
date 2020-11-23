@@ -22,12 +22,26 @@ URL Generator for Conjoint Experiments with Simple Designs
 
 ## インストール
 
-1. devtoolsパッケージを導入
-  * `install.packages("devtools")`
-2. SimpleConjointのインストール
-  * `devtools::install_github("JaehyunSong/SimpleConjoint")`
+1. {devtools}、または{remotes}パッケージを導入
+
+```
+install.packages("devtools")
+# または
+install.packages("remotes")
+```
+
+2. {SimpleConjoint}のインストール
+
+```
+devtools::install_github("JaehyunSong/SimpleConjoint")
+# または
+remotes::install_github("JaehyunSong/SimpleConjoint")
+```
+
 3. パッケージの読み込み
-  * `library(SimpleConjoint)`
+```
+library(SimpleConjoint)
+```
 
 ---
 
@@ -58,7 +72,7 @@ is.gd: https://is.gd
 
 * ここでURLのみコピーし、URLを短縮します。[Bit.ly](https://bitly.com/)、[is.gd](https://is.gd/)などが代表的なサービスです。以降の手順は、この短縮されたURLを使用し、[通常のコンジョイント分析](http://tintstyle.cafe24.com/studynote/methodology/qualtrics_conjoint/)と同じです。QualtricsのUIの方では2バイト文字をGET methodで送ることができますが、実際の場面では出来なようなので、URLを短縮する必要があります ([矢内勇生](https://yukiyanai.github.io)先生の指摘により修正しました。)。
 
-* `ShortURL = TRUE`を指定する場合、[is.gd](https://is.gd/)経由で短縮URLを返します。短縮URLはQualtricsのWeb Serviceに埋め込むことができます。インターネットが使える環境で使用してください。
+* `ShortURL = TRUE`を指定する場合、[is.gd](https://is.gd/)経由で短縮URLを返します。短縮URLはQualtricsのWeb Serviceに埋め込むことができます。インターネットが使える環境で使用してください。URL短縮には{urlshorteneR}パッケージを使用しています。
 
 ```
 # デザインdata.framenの読み込み
