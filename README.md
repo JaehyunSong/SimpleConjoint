@@ -49,7 +49,24 @@ library(SimpleConjoint)
 
 パッケージの読み込み後、`?GenerateURL`で確認してください。
 
-**例**
+#### パラメーター
+
+```r
+GenerateURL(data, Task = 3, Profile = 2, Randomized = TRUE,
+            DefaultURL = "http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.php",
+            ShortURL = FALSE,
+            Design = FALSE)
+```
+
+* `data`: data.frame、または属性名が1行目、2行目から各属性の水準が記入されたcsvファイルの経路（URL可）
+* `Task`: 試行回数（既定値 = 3）
+* `Profile`: プロフィールの数（既定値 = 2）
+* `Randomized`: `TRUE`の場合、属性の順番はランダム化され、FALSEの場合、csvに記入された順番で表示されます。（既定値 = `TRUE`）
+* `DefaultURL`: `SimpleConjoint.php`のURLを指定します。指定がない場合、宋のサーバーのURL（既定値）となります。自分のサーバーを用いる場合は指定して下さい。宋のサーバーが可愛そうです。
+* `ShortURL`: `TRUE`の場合、[is.gd](https://is.gd/)経由で圧縮されたURLを返します。そのままQualtricsに埋め込めます。インターネット接続が必要です。（既定値 = `FALSE`）
+* `Design`: {cjoint}パッケージで分析を行う際に必要なデザインリストを返します。このオプションが`TRUE`の場合、URLは返還されません。（既定値 = `FALSE`）
+
+#### 例
 
 ```r
 library(SimpleConjoint)
