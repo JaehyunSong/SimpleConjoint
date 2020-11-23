@@ -40,7 +40,7 @@ URL Generator for Conjoint Experiments with Simple Designs
 ```
 library(SimpleConjoint)
 
-# 試行回数4回、プロフィール2個、属性のランダム化の場合
+# 試行回数4回、プロフィール2個、属性の順番ランダム化の場合
 GenerateURL(data = "http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/ExampleDesign2.csv", 
             Task = 4, Profile = 2, Randomized = TRUE, ShortURL = FALSE,
             DefaultURL = "http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.php")
@@ -58,15 +58,16 @@ is.gd: https://is.gd
 
 * ここでURLのみコピーし、URLを短縮します。[Bit.ly](https://bitly.com/)、[is.gd](https://is.gd/)などが代表的なサービスです。以降の手順は、この短縮されたURLを使用し、[通常のコンジョイント分析](http://tintstyle.cafe24.com/studynote/methodology/qualtrics_conjoint/)と同じです。QualtricsのUIの方では2バイト文字をGET methodで送ることができますが、実際の場面では出来なようなので、URLを短縮する必要があります ([矢内勇生](https://yukiyanai.github.io)先生の指摘により修正しました。)。
 
-* `ShortURL = TRUE`を指定する場合、[is.gd](https://is.gd/)経由で短縮URLを返します。インターネットが使える環境で使用してください。
+* `ShortURL = TRUE`を指定する場合、[is.gd](https://is.gd/)経由で短縮URLを返します。短縮URLはQualtricsのWeb Serviceに埋め込むことができます。インターネットが使える環境で使用してください。
 
 ```
 # デザインdata.framenの読み込み
 DesignData <- read.csv("http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/ExampleDesign2.csv")
 
-# 試行回数4回、プロフィール2個、属性のランダム化の場合
+# デザインはcsv経路でなく、data.frameそのまま
+# 試行回数3回、プロフィール2個、属性の順番ランダム化、短縮URL出力
 GenerateURL(data = DesignData, 
-            Task = 4, Profile = 2, Randomized = TRUE, ShortURL = TRUE,
+            Task = 3, Profile = 2, Randomized = TRUE, ShortURL = TRUE,
             DefaultURL = "http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.php")
 ```
 
