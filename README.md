@@ -110,7 +110,7 @@ Long URL : http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.p
 ```
 
 * `DefaultURL`パラメーターは自分のサーバーに`SimpleConjoint.php`を置く際に使って下さい。指定なない場合、宋のサーバーを使います。
-    * 自分のサーバーに導入する場合、[このファイル](https://www.dropbox.com/s/rfxlu8k0ctgjl9p/SimpleConjoint.php?dl=0)を使って下さい。
+    * 自分のサーバーに導入する場合、[このファイル](https://raw.githubusercontent.com/JaehyunSong/SimpleConjoint/master/Script/SimpleConjoint.php)を使って下さい。
 
 * 最初のパラメーターは属性と水準が格納されているdata.frame、またはcsvファイルです。たとえば、以下の形式となります。
 
