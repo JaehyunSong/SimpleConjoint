@@ -121,7 +121,7 @@ Long URL : http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.p
 |||水準3-4||
 |||水準3-5|| 
 
-* CSVファイルは自分のパソコンからでも、URLからでも取得できます。サンプルファイルとして[http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/ExampleDesign2.csv](http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/ExampleDesign2.csv)を使ってみて下さい。
+* csvファイルは自分のパソコンからでも、URLからでも取得できます。サンプルファイルとして[http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/ExampleDesign2.csv](http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/ExampleDesign2.csv)を使ってみて下さい。
   * `data`引数のクラスがcharacterの場合、その経路のcsvファイルを取得し、data.frameクラスの場合はそのまま使えます。
 
-* `cjoint`パッケージを用いて分析を行う場合、属性と水準情報が含まれたリストオブジェクトが必要となります。引数に`Design = TRUE`を指定するとリスト型が返還され、そのまま`cjoint`パッケージで使用可能です。
+* {cjoint}パッケージを用いて分析を行う場合、属性と水準情報が含まれたリストオブジェクトが必要となります。引数に`Design = TRUE`を指定するとリスト型が返還され、そのまま{cjoint}パッケージで使用可能です。
