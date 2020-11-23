@@ -51,7 +51,8 @@ GenerateURL <- function(data, Task = 3, Profile = 2,
       cat(paste("Before the url above embed into Qualtrics, please shorten the url via url shortner.\nBitly: https://www.bitly.com\nis.gd: https://is.gd"))
     } else {
       short_URL <- urlshorteneR::isgd_LinksShorten(longURL)
-      cat(paste(short_URL))
+      cat(paste("Short URL:", short_URL, "\n\n"))
+      cat(paste("Long URL :", longURL))
     }
 
   }
