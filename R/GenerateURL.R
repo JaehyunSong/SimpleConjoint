@@ -1,7 +1,7 @@
 GenerateURL <- function(data, Task = 3, Profile = 2,
                         Randomized = TRUE,
                         DefaultURL = "http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.php",
-                        Shortner   = FALSE,
+                        ShortURL   = FALSE,
                         Design     = FALSE){
 
   if (class(data) == "character") {
@@ -46,12 +46,12 @@ GenerateURL <- function(data, Task = 3, Profile = 2,
                       paste(c(nTas, nPro, Rand, nA.R, nL.R, A.R, L.R),
                             collapse = "&"))
 
-    if (Shortner == FALSE) {
+    if (ShortURL == FALSE) {
       cat(paste(longURL, "\n\n"))
       cat(paste("Before the url above embed into Qualtrics, please shorten the url via url shortner.\nBitly: https://www.bitly.com\nis.gd: https://is.gd"))
     } else {
-      shortURL <- urlshorteneR::isgd_LinksShorten(longURL)
-      cat(paste(shortURL))
+      short_URL <- urlshorteneR::isgd_LinksShorten(longURL)
+      cat(paste(short_URL))
     }
 
   }
