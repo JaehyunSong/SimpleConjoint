@@ -49,8 +49,6 @@ library(SimpleConjoint)
 
 パッケージの読み込み後、`?GenerateURL`で確認してください。
 
-#### パラメーター
-
 ```r
 GenerateURL(data, Task = 3, Profile = 2, Randomized = TRUE,
             DefaultURL = "http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.php",
@@ -66,7 +64,9 @@ GenerateURL(data, Task = 3, Profile = 2, Randomized = TRUE,
 * `ShortURL`: `TRUE`の場合、[is.gd](https://is.gd/)経由で圧縮されたURLを返します。そのままQualtricsに埋め込めます。インターネット接続が必要です。（既定値 = `FALSE`）
 * `Design`: {cjoint}パッケージで分析を行う際に必要なデザインリストを返します。このオプションが`TRUE`の場合、URLは返還されません。（既定値 = `FALSE`）
 
-#### 例
+### 例1
+
+**Input**
 
 ```r
 library(SimpleConjoint)
@@ -77,7 +77,7 @@ GenerateURL(data = "http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/Example
             DefaultURL = "http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.php")
 ```
 
-* 実行すると、以下のような結果が返ってきます。
+**Output**
 
 ```
 http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.php?nTask=5&nProfile=2&AttrRand=1&nA=4&nL[]=6&nL[]=5&nL[]=4&nL[]=7&A[]=スープ&A[]=麺&A[]=具材&A[]=値段&L[]=醤油&L[]=塩&L[]=味噌&L[]=豚骨&L[]=トマト&L[]=ビール&L[]=極太麺&L[]=太麺&L[]=中細麺&L[]=細麺&L[]=こんにゃく&L[]=チャーシュー&L[]=メンマ&L[]=プリン&L[]=ネギ&L[]=400円&L[]=500円&L[]=600円&L[]=700円&L[]=800円&L[]=900円&L[]=1000円 
@@ -89,7 +89,11 @@ is.gd: https://is.gd
 
 * ここでURLのみコピーし、URLを短縮します。[Bit.ly](https://bitly.com/)、[is.gd](https://is.gd/)などが代表的なサービスです。以降の手順は、この短縮されたURLを使用し、[通常のコンジョイント分析](https://www.jaysong.net/studynote/methodology/qualtrics_conjoint/)と同じです。QualtricsのUIの方では2バイト文字をGET methodで送ることができますが、実際の場面では出来なようなので、URLを短縮する必要があります ([矢内勇生](https://yukiyanai.github.io)先生の指摘により修正しました。)。
 
+### 例2
+
 * `ShortURL = TRUE`を指定する場合、[is.gd](https://is.gd/)経由で短縮URLを返します。短縮URLはQualtricsのWeb Serviceに埋め込むことができます。インターネットが使える環境で使用してください。URL短縮には{urlshorteneR}パッケージを使用しています。
+
+**Input**
 
 ```r
 # デザインdata.framen作成
@@ -106,12 +110,16 @@ GenerateURL(data = DesignData,
             DefaultURL = "http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.php")
 ```
 
+**Output**
+
 ```
 # 出力結果
 Short URL: https://is.gd/4Yk64B 
 
 Long URL : http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.php?nTask=3&nProfile=2&AttrRand=1&nA=4&nL[]=2&nL[]=4&nL[]=3&nL[]=5&A[]=性別&A[]=年齢&A[]=学歴&A[]=年収&L[]=男性&L[]=女性&L[]=20&L[]=30&L[]=40&L[]=50&L[]=高校&L[]=大学&L[]=大学院&L[]=0&L[]=300万&L[]=500万&L[]=700万&L[]=1000万
 ```
+
+---
 
 * `DefaultURL`パラメーターは自分のサーバーに[`SimpleConjoint.php`](https://raw.githubusercontent.com/JaehyunSong/SimpleConjoint/master/Script/SimpleConjoint.php)を置く際に使って下さい。指定なない場合、宋のサーバーを使います。
 
