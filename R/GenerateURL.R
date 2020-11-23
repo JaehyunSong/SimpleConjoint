@@ -1,9 +1,15 @@
-GenerateURL <- function(file, Task = 3, Profile = 2,
+GenerateURL <- function(data, Task = 3, Profile = 2,
                         Randomized = TRUE,
                         DefaultURL = "http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.php",
+                        Shortner   = FALSE,
                         Design     = FALSE){
 
-  df <- read.csv(file, header = FALSE, stringsAsFactors = FALSE)
+  if (class(data) == "character") {
+    df <- read.csv(data, header = FALSE)
+  } else if ("data.frame" %in% class(tibble(X = 1))) {
+    df <- data
+  }
+
   nA <- ncol(df)
   nL <- c()
   A  <- c()
@@ -36,8 +42,14 @@ GenerateURL <- function(file, Task = 3, Profile = 2,
                       paste(c(nTas, nPro, Rand, nA.R, nL.R, A.R, L.R),
                             collapse = "&"))
 
-    cat(paste(longURL, "\n\n"))
-    cat(paste("Before the url above embed into Qualtrics, please shorten the url via url shortner.\nBitly: https://www.bitly.com"))
+    if (Shortner == FALSE) {
+      cat(paste(longURL, "\n\n"))
+      cat(paste("Before the url above embed into Qualtrics, please shorten the url via url shortner.\nBitly: https://www.bitly.com\nis.gd: https://is.gd"))
+    } else {
+      shortURL <- urlshorteneR::isgd_LinksShorten(longURL)
+      cat(paste(shortURL))
+    }
+
   }
 
   if (Design == TRUE) {

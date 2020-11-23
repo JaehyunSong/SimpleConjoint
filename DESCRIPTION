@@ -1,10 +1,11 @@
 Package: SimpleConjoint
 Type: Package
 Title: URL Generator for Conjoint Experiments with Simple Designs
-Version: 0.0.3
+Version: 0.1.0
 Author: Jaehyun Song
 Maintainer: Jaehyun Song <tintstyle@gmail.com>
-Description: 
-License: 
+Imports: urlshorteneR
+Description: URL Generator for Conjoint Experiments with Simple Designs.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
