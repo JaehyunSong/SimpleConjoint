@@ -58,7 +58,7 @@ is.gd: https://is.gd
 
 * ここでURLのみコピーし、URLを短縮します。[Bit.ly](https://bitly.com/)、[is.gd](https://is.gd/)などが代表的なサービスです。以降の手順は、この短縮されたURLを使用し、[通常のコンジョイント分析](http://tintstyle.cafe24.com/studynote/methodology/qualtrics_conjoint/)と同じです。QualtricsのUIの方では2バイト文字をGET methodで送ることができますが、実際の場面では出来なようなので、URLを短縮する必要があります ([矢内勇生](https://yukiyanai.github.io)先生の指摘により修正しました。)。
 
-* `ShortURL = TRUE`を指定する場合、[is.gd](https://is.gd/)経由で短縮URLを返します。
+* `ShortURL = TRUE`を指定する場合、[is.gd](https://is.gd/)経由で短縮URLを返します。インターネットが使える環境で使用してください。
 
 ```
 # デザインdata.framenの読み込み
