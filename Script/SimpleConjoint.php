@@ -8,11 +8,6 @@ $nTask    = $_GET["nTask"];
 $nProfile = $_GET["nProfile"];
 $AttrRand = $_GET["AttrRand"];
 
-//print_r($nA);
-//print_r($nL);
-//print_r($A);
-//print_r($L);
-
 $featurearray = array();
 
 $k = 0;
