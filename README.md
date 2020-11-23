@@ -93,7 +93,7 @@ is.gd: https://is.gd
 
 ```r
 # デザインdata.framen作成
-# 余るセルは欠損値でなく空characterで補完（`""`）
+# 余るセルは欠損値でなく空character（""）で補完
 DesignData <- data.frame(性別 = c("男性", "女性", "", "", ""),
                          年齢 = c("20", "30", "40", "50", ""),
                          学歴 = c("高校", "大学", "大学院", "", ""),
@@ -116,6 +116,7 @@ Long URL : http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.p
 * `DefaultURL`パラメーターは自分のサーバーに[`SimpleConjoint.php`](https://raw.githubusercontent.com/JaehyunSong/SimpleConjoint/master/Script/SimpleConjoint.php)を置く際に使って下さい。指定なない場合、宋のサーバーを使います。
 
 * 最初のパラメーターは属性と水準が格納されているdata.frame、またはcsvファイルです。たとえば、以下の形式となります。
+  * 空白のセルは欠損値（`NA`）でなく、空character（`""`）で埋めてください。
 
 |属性名1|属性名2|属性名3|属性名4|
 |---|---|---|---|
