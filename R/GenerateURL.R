@@ -6,7 +6,7 @@ GenerateURL <- function(data, Task = 3, Profile = 2,
 
   if (class(data) == "character") {
     df <- read.csv(data, header = FALSE)
-  } else if ("data.frame" %in% class(tibble(X = 1))) {
+  } else if ("data.frame" %in% class(data)) {
     df <- data
   }
 
