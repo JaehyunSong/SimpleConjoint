@@ -92,8 +92,12 @@ is.gd: https://is.gd
 * `ShortURL = TRUE`を指定する場合、[is.gd](https://is.gd/)経由で短縮URLを返します。短縮URLはQualtricsのWeb Serviceに埋め込むことができます。インターネットが使える環境で使用してください。URL短縮には{urlshorteneR}パッケージを使用しています。
 
 ```r
-# デザインdata.framenの読み込み
-DesignData <- read.csv("http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/ExampleDesign2.csv")
+# デザインdata.framen作成
+# 余るセルは欠損値でなく空characterで補完（`""`）
+DesignData <- data.frame(性別 = c("男性", "女性", "", "", ""),
+                         年齢 = c("20", "30", "40", "50", ""),
+                         学歴 = c("高校", "大学", "大学院", "", ""),
+                         年収 = c("0", "300万", "500万", "700万", "1000万"))
 
 # デザインはcsv経路でなく、data.frameそのまま
 # 試行回数3回、プロフィール2個、属性の順番ランダム化、短縮URL出力
@@ -104,9 +108,9 @@ GenerateURL(data = DesignData,
 
 ```
 # 出力結果
-Short URL: https://is.gd/BbwxBk 
+Short URL: https://is.gd/4Yk64B 
 
-Long URL : http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.php?nTask=4&nProfile=2&AttrRand=1&nA=4&nL[]=6&nL[]=5&nL[]=4&nL[]=7&A[]=スープ&A[]=麺&A[]=具材&A[]=値段&L[]=醤油&L[]=塩&L[]=味噌&L[]=豚骨&L[]=トマト&L[]=ビール&L[]=極太麺&L[]=太麺&L[]=中細麺&L[]=細麺&L[]=こんにゃく&L[]=チャーシュー&L[]=メンマ&L[]=プリン&L[]=ネギ&L[]=400円&L[]=500円&L[]=600円&L[]=700円&L[]=800円&L[]=900円&L[]=1000円
+Long URL : http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.php?nTask=3&nProfile=2&AttrRand=1&nA=4&nL[]=2&nL[]=4&nL[]=3&nL[]=5&A[]=性別&A[]=年齢&A[]=学歴&A[]=年収&L[]=男性&L[]=女性&L[]=20&L[]=30&L[]=40&L[]=50&L[]=高校&L[]=大学&L[]=大学院&L[]=0&L[]=300万&L[]=500万&L[]=700万&L[]=1000万
 ```
 
 * `DefaultURL`パラメーターは自分のサーバーに[`SimpleConjoint.php`](https://raw.githubusercontent.com/JaehyunSong/SimpleConjoint/master/Script/SimpleConjoint.php)を置く際に使って下さい。指定なない場合、宋のサーバーを使います。
