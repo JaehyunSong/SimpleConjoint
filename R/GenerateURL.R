@@ -7,7 +7,11 @@ GenerateURL <- function(data, Task = 3, Profile = 2,
   if (class(data) == "character") {
     df <- read.csv(data, header = FALSE)
   } else if ("data.frame" %in% class(data)) {
-    df <- data
+    first_row <- data.frame(matrix(names(data), nrow = 1))
+    below_row <- data
+    names(below_row) <- names(first_row)
+
+    df <- rbind(first_row, below_row)
   }
 
   nA <- ncol(df)
