@@ -15,7 +15,7 @@ GenerateURL(data, Task = 3, Profile = 2, Randomized = TRUE,
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{data}{data.frame、または属性名が1行目、2行目から各属性の水準が記入されたcsvファイルの経路（URL可）}
+  \item{data}{data.frame、list、または属性名が1行目、2行目から各属性の水準が記入されたcsvファイルの経路（URL可）}
   \item{Task}{試行回数}
   \item{Profile}{プロフィールの数}
   \item{Randomized}{TRUEの場合、属性の順番はランダム化され、FALSEの場合、csvに記入された順番で表示されます。}
@@ -51,10 +51,36 @@ Jaehyun Song (Doshisha University) <tintstyle@gmail.com / https://www.jaysong.ne
 # read.csv("http://www.jaysong.net/Qualtrics/SimpleConjoint/ExampleDesign2.csv")
 
 # 上記の属性と水準で試行回数5回、プロフィール数2つ、属性のランダム化
-GenerateURL("http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/ExampleDesign2.csv", Task = 5, Profile = 2, Randomized = TRUE)
+GenerateURL(data = "http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/ExampleDesign2.csv",
+            Task = 5)
+
+# data.frameを使用する場合
+## デザインdata.frameの作成
+## 余るセルは欠損値でなく空character（""）で補完
+DesignData <- data.frame(性別 = c("男性", "女性", "", "", ""),
+                         年齢 = c("20", "30", "40", "50", ""),
+                         学歴 = c("高校", "大学", "大学院", "", ""),
+                         年収 = c("0", "300万", "500万", "700万", "1000万"))
+
+## 試行回数4回、プロフィール2個、属性の順番ランダム化、短縮URL出力
+GenerateURL(data = DesignData,
+            Task = 4, Profile = 2, Randomized = TRUE, ShortURL = TRUE)
+
+# listを使用する場合
+## デザインdata.frameの作成
+## 余るセルは欠損値でなく空character（""）で補完
+DesignData <- list(性別 = c("男性", "女性"),
+                   年齢 = c("20", "30", "40", "50"),
+                   学歴 = c("高校", "大学", "大学院"),
+                   年収 = c("0", "300万", "500万", "700万", "1000万"))
+
+## 試行回数5回、プロフィール3個、属性の順番ランダム化なし、短縮URL出力
+GenerateURL(data = DesignData,
+            Task = 5, Profile = 3, Randomized = FALSE, ShortURL = TRUE)
 
 # デザインリストを取得する場合
-DesignList <- GenerateURL("http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/ExampleDesign2.csv", Design = TRUE)
+DesignList <- GenerateURL("http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/ExampleDesign2.csv",
+                          Design = TRUE)
 print(DesignList)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

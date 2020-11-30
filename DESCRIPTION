@@ -1,7 +1,7 @@
 Package: SimpleConjoint
 Type: Package
 Title: URL Generator for Conjoint Experiments with Simple Designs
-Version: 0.1.0
+Version: 0.1.1
 Author: Jaehyun Song
 Maintainer: Jaehyun Song <tintstyle@gmail.com>
 Imports: urlshorteneR

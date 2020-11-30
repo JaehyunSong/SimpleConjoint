@@ -12,6 +12,13 @@ GenerateURL <- function(data, Task = 3, Profile = 2,
     names(below_row) <- names(first_row)
 
     df <- rbind(first_row, below_row)
+  } else if ("list" %in% class(data)) {
+    TempList <- data
+    nLevels  <- unlist(lapply(TempList, length))
+    for (i in 1:length(TempList)) {
+      TempList[[i]] <- c(TempList[[i]], rep("", max(nLevels) - nLevels[i]))
+    }
+    df <- as.data.frame(TempList)
   }
 
   nA <- ncol(df)
