@@ -1,10 +1,17 @@
-# SimpleConjoint 0.1.0
+# SimpleConjoint 0.1.1
 URL Generator for Conjoint Experiments with Simple Designs
 
 ---
 
+## 開発者情報
+* Song Jaehyun（そん　じぇひょん）
+* 同志社大学文化情報学部　助教
+* https://www.jaysong.net
+* jasong@mail.doshisha.ac.jp
+
 ## 履歴
 
+* 2020/11/30: `data`の実引数としてlist型が使用可能になりました。
 * 2020/11/23: 短縮URLを生成する`ShortURL`引数を追加しました。
 * 2020/11/19: 既定URLを修正しました。
 * 2019/02/06: [矢内勇生](https://yukiyanai.github.io)先生にご指摘いただきまして、php側の致命的なエラーを修正しました。矢内勇生先生に感謝申し上げます。
@@ -108,6 +115,33 @@ DesignData <- data.frame(性別 = c("男性", "女性", "", "", ""),
 GenerateURL(data = DesignData, 
             Task = 3, Profile = 2, Randomized = TRUE, ShortURL = TRUE,
             DefaultURL = "http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.php")
+```
+
+**Output**
+
+```
+# 出力結果
+Short URL: https://is.gd/4Yk64B 
+
+Long URL : http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.php?nTask=3&nProfile=2&AttrRand=1&nA=4&nL[]=2&nL[]=4&nL[]=3&nL[]=5&A[]=性別&A[]=年齢&A[]=学歴&A[]=年収&L[]=男性&L[]=女性&L[]=20&L[]=30&L[]=40&L[]=50&L[]=高校&L[]=大学&L[]=大学院&L[]=0&L[]=300万&L[]=500万&L[]=700万&L[]=1000万
+```
+
+### 例3
+
+**Input**
+
+* list型を`data`の実引数として使用する場合
+
+```r
+# デザインlistの作成
+DesignData <- list(性別 = c("男性", "女性"),
+                   年齢 = c("20", "30", "40", "50"),
+                   学歴 = c("高校", "大学", "大学院"),
+                   年収 = c("0", "300万", "500万", "700万", "1000万"))
+
+## 試行回数5回、プロフィール3個、属性の順番ランダム化なし、短縮URL出力
+GenerateURL(data = DesignData,
+            Task = 5, Profile = 3, Randomized = FALSE, ShortURL = TRUE)
 ```
 
 **Output**
