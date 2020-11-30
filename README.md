@@ -131,6 +131,7 @@ Long URL : http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.p
 **Input**
 
 * list型を`data`の実引数として使用する場合
+  * ここで作成するリストは{cjoint}パッケージのデザインリストとして使用可能です。
 
 ```r
 # デザインlistの作成
