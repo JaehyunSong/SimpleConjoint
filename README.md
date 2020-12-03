@@ -11,6 +11,7 @@ URL Generator for Conjoint Experiments with Simple Designs
 
 ## 履歴
 
+* 2020/12/03: 外部サーバーと完全に独立した[SimpleConjoint.js](https://github.com/JaehyunSong/SimpleConjoint.js)のベータ版を公開しました。
 * 2020/11/30: `data`の実引数としてlist型が使用可能になりました。
 * 2020/11/23: 短縮URLを生成する`ShortURL`引数を追加しました。
 * 2020/11/19: 既定URLを修正しました。
