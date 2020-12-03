@@ -173,3 +173,13 @@ Long URL : http://tintstyle.cafe24.com/Qualtrics/SimpleConjoint/SimpleConjoint.p
   * `data`引数のクラスがcharacterの場合、その経路のcsvファイルを取得し、data.frameクラスの場合はそのまま使えます。
 
 * {cjoint}パッケージを用いて分析を行う場合、属性と水準情報が含まれたリストオブジェクトが必要となります。引数に`Design = TRUE`を指定するとリスト型が返還され、そのまま{cjoint}パッケージで使用可能です。
+
+---
+
+## 今後の予定
+
+* 属性ブロックの指定
+  * ブロック間のランダマイズ + 一部のブロック位置の固定
+  * ブロック内のランダマイズ + ランダマイズしないブロックの指定
+* SimpleConjoint for Shiny
+* URLでなく、Qualtricsに直接埋め込めるJavaScriptコードの生成
